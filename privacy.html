@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.bunny.net; font-src https://fonts.bunny.net; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Политика конфиденциальности (152-ФЗ) — Капчиков Константин Алексеевич</title>
+  <meta name="robots" content="noindex, follow" />
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('kapchikov_theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link href="https://fonts.bunny.net/css?family=playfair-display:600,700,600i|golos-text:400,500,600,700|ibm-plex-mono:400,500,600&display=swap" rel="stylesheet">
+  <style>
+    :root,
+    [data-theme="light"] {
+      --bg-page: #f7f5f2;
+      --bg-alt: #efece7;
+      --text-main: #18181b;
+      --text-body: #3f3f46;
+      --text-muted: #71717a;
+      --accent: #6e1729;
+      --accent-hover: #581020;
+      --accent-soft: rgba(110, 23, 41, 0.08);
+      --accent-text-on: #ffffff;
+      --line: rgba(24, 24, 27, 0.12);
+      --line-strong: rgba(24, 24, 27, 0.24);
+    }
+    [data-theme="dark"] {
+      --bg-page: #0c0d10;
+      --bg-alt: #13151a;
+      --text-main: #f4f4f6;
+      --text-body: #c4c7d0;
+      --text-muted: #848894;
+      --accent: #8f2238;
+      --accent-hover: #a62b44;
+      --accent-soft: rgba(143, 34, 56, 0.18);
+      --accent-text-on: #ffffff;
+      --line: rgba(244, 244, 246, 0.10);
+      --line-strong: rgba(244, 244, 246, 0.22);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Golos Text', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.68;
+      padding: 0 20px 72px;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.28s ease, color 0.28s ease;
+    }
+    .doc-bar {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .doc-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .doc-bar a:hover { text-decoration: underline; }
+    .bar-actions { display: flex; gap: 10px; }
+    .btn-sm {
+      background: transparent;
+      border: 1px solid var(--line-strong);
+      color: var(--text-main);
+      padding: 7px 13px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+    .btn-sm { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-sm:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .doc-bar a.btn-sm-accent {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-text-on);
+      font-weight: 600;
+    }
+    .doc-bar a.btn-sm-accent:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: var(--accent-text-on);
+      text-decoration: none;
+    }
+    .doc-wrap {
+      max-width: 860px;
+      margin: 44px auto 0;
+    }
+    .doc-kicker {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 3.8vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .doc-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      padding-bottom: 24px;
+      border-bottom: 1.5px solid var(--line-strong);
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.38rem;
+      font-weight: 600;
+      margin: 34px 0 12px;
+      color: var(--text-main);
+    }
+    p {
+      color: var(--text-body);
+      margin-bottom: 12px;
+      font-size: 0.96rem;
+    }
+    ul {
+      margin: 8px 0 16px 22px;
+      color: var(--text-body);
+      font-size: 0.95rem;
+    }
+    li { margin-bottom: 6px; }
+    .notice-box {
+      margin: 24px 0;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      font-size: 0.93rem;
+      color: var(--text-main);
+    }
+    @media print {
+      .doc-bar { display: none; }
+      body { background: #ffffff; color: #000000; padding: 0; }
+      p, li { color: #222222; }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-bar">
+    <a href="index.html">← Вернуться на сайт</a>
+    <div class="bar-actions">
+      <a href="privacy-policy-kapchikov.pdf" download="Политика_конфиденциальности_Капчиков_КА.pdf" class="btn-sm btn-sm-accent">↓ Скачать PDF</a>
+      <button type="button" class="btn-sm" onclick="window.print()">Печать</button>
+      <button type="button" class="btn-sm" onclick="toggleTheme()">Сменить тему</button>
+    </div>
+  </div>
+
+  <main class="doc-wrap">
+    <div class="doc-kicker">Официальный документ • Федеральный закон № 152-ФЗ</div>
+    <h1>Политика в отношении обработки персональных данных</h1>
+    <div class="doc-meta">
+      Оператор персональных данных: Капчиков Константин Алексеевич (физическое лицо, оказывающее образовательные консультационные услуги)<br>
+      Дата редакции: 19 ноября 2026 г. • Действует бессрочно до замены новой редакцией
+    </div>
+
+    <div class="notice-box">
+      <strong>Краткая суть для пользователей:</strong> данный сайт является статической информационной страницей. Он <strong>не сохраняет</strong> введённые вами данные на сервере и не передаёт их третьим лицам. Форма записи лишь формирует готовый текст сообщения для вашего личного обращения в Telegram или MAX.
+    </div>
+
+    <h2>1. Общие положения</h2>
+    <p>1.1. Настоящая Политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению их безопасности, предпринимаемые Капчиковым Константином Алексеевичем (далее — Оператор).</p>
+    <p>1.2. Оператор ставит своей важнейшей целью соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+    <p>1.3. Настоящая Политика применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта и лицах, обратившихся за записью на диагностику или занятия по математике и физике.</p>
+
+    <h2>2. Состав обрабатываемых данных</h2>
+    <p>2.1. На самом веб-сайте сбор персональных данных в базы данных не осуществляется. Поля формы («Направление подготовки», «Класс и желаемый результат», «Удобные дни и время») обрабатываются локально в браузере пользователя исключительно для генерации текста сообщения при переходе в мессенджеры Telegram или MAX.</p>
+    <p>2.2. При добровольном направлении сообщения Оператору в мессенджере Telegram (@Kreker_131) или MAX Оператор может получать следующие данные:</p>
+    <ul>
+      <li>имя ученика и/или родителя (законного представителя);</li>
+      <li>контактные данные в мессенджере (имя пользователя / номер телефона при инициативном обращении);</li>
+      <li>сведения об учебном процессе: класс обучения, выбранный экзамен (ЕГЭ/ОГЭ), целевой балл, удобное расписание, результаты входной диагностики и пробников.</li>
+    </ul>
+    <p>2.3. Для удобства отображения интерфейса сайт сохраняет в локальном хранилище браузера (<code>localStorage</code>) исключительно технический параметр выбранной цветовой темы (<code>light</code> или <code>dark</code>). Файлы cookie для рекламного отслеживания на сайте не используются.</p>
+
+    <h2>3. Цели и правовые основания обработки</h2>
+    <p>3.1. Обработка персональных данных осуществляется на основании ст. 6 Федерального закона № 152-ФЗ (с согласия субъекта персональных данных либо законного представителя несовершеннолетнего, а также для исполнения договора об оказании услуг).</p>
+    <p>3.2. Цели обработки персональных данных:</p>
+    <ul>
+      <li>проведение бесплатной вводной диагностики знаний (30 минут);</li>
+      <li>согласование расписания и организация онлайн-занятий по математике и физике;</li>
+      <li>ведение индивидуального учебного трекера прогресса в Notion и хранение учебных конспектов на интерактивной доске Holst;</li>
+      <li>информирование родителей (законных представителей) об успеваемости и переносах занятий.</li>
+    </ul>
+
+    <h2>4. Порядок обработки, хранения и защиты данных</h2>
+    <p>4.1. Оператор обеспечивает сохранность персональных данных и принимает необходимые правовые, организационные и технические меры для защиты данных от неправомерного доступа, уничтожения, изменения или распространения.</p>
+    <p>4.2. Персональные данные пользователей никогда и ни при каких условиях не передаются третьим лицам, за исключением случаев, прямо предусмотренных действующим законодательством Российской Федерации.</p>
+    <p>4.3. Срок хранения персональных данных определяется достижением целей обработки (завершением подготовки к экзамену / окончанием занятий) либо моментом отзыва согласия субъектом персональных данных.</p>
+
+    <h2>5. Права субъекта персональных данных</h2>
+    <p>5.1. Пользователь (или законный представитель несовершеннолетнего ученика) имеет право в любой момент:</p>
+    <ul>
+      <li>получить информацию об обработке своих персональных данных;</li>
+      <li>потребовать уточнения, блокирования или полного удаления персональных данных (включая удаление персональной страницы трекера в Notion и переписки);</li>
+      <li>отозвать согласие на обработку персональных данных.</li>
+    </ul>
+    <p>5.2. Для реализации указанных прав достаточно направить обращение в свободной форме Оператору в Telegram: <strong>@Kreker_131</strong>. Запрос исполняется в срок не более 10 рабочих дней.</p>
+
+    <h2>6. Заключительные положения</h2>
+    <p>6.1. Актуальная версия Политики в свободном доступе расположена на данной странице сайта.</p>
+    <p>6.2. Оператор вправе вносить изменения в настоящую Политику при изменении законодательства РФ или условий работы сайта. Новая редакция вступает в силу с момента её публикации на сайте.</p>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      var cur = document.documentElement.getAttribute('data-theme') || 'light';
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('kapchikov_theme', next); } catch (e) {}
+    }
+  </script>
+</body>
+</html>
