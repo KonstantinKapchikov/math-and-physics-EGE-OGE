@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+
+Sitemap: https://konstantinkapchikov.github.io/math-and-physics-EGE-OGE/sitemap.xml
