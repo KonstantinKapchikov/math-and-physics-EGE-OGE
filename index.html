@@ -3026,7 +3026,7 @@
     function buildMessage() {
       const subject = sanitizeText(document.getElementById('leadSubject').value, 80);
       const goal = sanitizeText(document.getElementById('leadGoal').value, 120) || 'не указано';
-      const time = sanitizeText(document.getElementById('leadTime').value, 120) || 'по договоренности';
+      const time = sanitizeText(document.getElementById('leadTime').value, 120) || 'по договорённости';
       return `Здравствуйте, Константин! Хочу записаться на бесплатную диагностику.\n• Направление: ${subject}\n• Класс / цель: ${goal}\n• Удобное время: ${time}`;
     }
 
@@ -3066,7 +3066,7 @@
     renderSimControls();
     renderNotionWidget();
     renderQuizCard();
-    setTimeout(() => { toggleQuizDrawer(true); }, 2400);
+    // Автооткрытие при входе отключено: виджет открывается при выборе программы или нажатии на кнопку
 
     // Прогресс прокрутки
     window.addEventListener('scroll', () => {
