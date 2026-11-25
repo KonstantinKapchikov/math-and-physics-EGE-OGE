@@ -410,11 +410,9 @@
     .h-btn-ghost:hover { border-color: var(--text-main); background: var(--bg-alt); }
 
     @media (max-width: 680px) {
-      .nav-controls { width: 100%; justify-content: space-between; gap: 6px; }
-      .h-btn { flex: 1; justify-content: center; padding: 7px 6px; font-size: 0.73rem; }
-      .theme-toggle { padding: 7px 9px; }
+      .nav-controls { width: 100%; justify-content: space-between; }
+      .h-btn { flex: 1; justify-content: center; padding: 8px 6px; font-size: 0.74rem; }
       .theme-toggle span { display: none; }
-      .program-meta { flex-wrap: wrap; gap: 4px; }
     }
 
     /* ============================================================
@@ -1407,19 +1405,7 @@
       transition: transform 0.45s var(--ease-spring), opacity 0.3s ease, background-color 0.28s ease;
     }
     .quiz-drawer.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
-    @media (max-width: 768px) {
-      .quiz-drawer {
-        right: 12px;
-        left: 12px;
-        bottom: 12px;
-        width: auto;
-        max-width: none;
-        transform: translateY(120%);
-      }
-      .quiz-drawer.open { transform: translateY(0); }
-      .quiz-fab { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 0.78rem; }
-      .quiz-meta { flex-direction: column; gap: 2px; }
-    }
+    @media (max-width: 720px) { .quiz-drawer { right: 14px; left: 14px; bottom: 14px; width: auto; max-width: none; } }
 
     .quiz-head {
       background: var(--bg-bar);
@@ -2109,7 +2095,7 @@
           </div>
         </div>
         <div class="sub-calc-foot">
-          <span style="font-size:0.86rem; color:var(--text-muted); max-width:660px; line-height:1.45;">Перенос занятия возможен при предупреждении не менее чем за 12 часов до начала при наличии свободных окон; если свободных окон нет или предупреждение дано позже, занятие оплачивается в полном объёме, а ученик получает видеозапись разбора ДЗ, теории по теме и практических заданий.</span>
+          <span style="font-size:0.86rem; color:var(--text-muted); max-width:660px; line-height:1.45;">Перенести занятие без потери оплаты можно при предупреждении не менее чем за 12 часов до начала, если в расписании есть свободные слоты. Если перенести не получается или вы предупредили позже чем за 12 часов, слот остаётся забронированным за учеником: занятие засчитывается как проведённое, а ученик получает видеоразбор домашнего задания, теорию по теме, примеры решения задач по теме и подборку для самостоятельной практики.</span>
           <div>
             <span style="font-size:0.88rem; color:var(--text-body); margin-right:10px;">Итого:</span>
             <span class="calc-price-out" id="calcResult">20 000&nbsp;₽</span>
@@ -2165,7 +2151,7 @@
             <span>5. Как устроен перенос занятия и как быстро вы отвечаете?</span>
             <span class="faq-ico">+</span>
           </summary>
-          <p>Перенос занятия возможен при предупреждении не менее чем за 12 часов до начала при наличии свободных окон; если свободных окон нет или предупреждение дано позже, занятие оплачивается в полном объёме, а ученик получает видеозапись разбора ДЗ, теории по теме и практических заданий. Время ответа на заявку — менее 2 часов (обычно отвечаю за 15–20 минут).</p>
+          <p>Перенести занятие без потери оплаты можно при предупреждении не менее чем за 12 часов до начала, если в расписании есть свободные слоты. Если перенести не получается или вы предупредили позже чем за 12 часов, слот остаётся забронированным за учеником: занятие засчитывается как проведённое, а ученик получает видеоразбор домашнего задания, теорию по теме, примеры решения задач по теме и подборку для самостоятельной практики. Время ответа на заявку — менее 2 часов (обычно отвечаю за 15–20 минут).</p>
         </details>
       </div>
 
@@ -3080,9 +3066,7 @@
     renderSimControls();
     renderNotionWidget();
     renderQuizCard();
-    if (window.innerWidth > 768) {
-      setTimeout(() => { toggleQuizDrawer(true); }, 2400);
-    }
+    setTimeout(() => { toggleQuizDrawer(true); }, 2400);
 
     // Прогресс прокрутки
     window.addEventListener('scroll', () => {
