@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.bunny.net; font-src https://fonts.bunny.net; base-uri 'self';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.bunny.net; font-src https://fonts.bunny.net; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>404 — Страница не найдена | Капчиков Константин Алексеевич</title>
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link href="https://fonts.bunny.net/css?family=playfair-display:600,600i|golos-text:500,700|ibm-plex-mono:600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -17,6 +20,7 @@
     h1 em { font-style: italic; color: #b83b54; }
     p { color: #c4c7d0; line-height: 1.6; margin-bottom: 24px; }
     a { display: inline-block; background: #7f1d32; color: #ffffff; text-decoration: none; padding: 12px 22px; border-radius: 4px; font-weight: 600; }
+    a:hover { background: #96233b; }
   </style>
 </head>
 <body>
@@ -24,7 +28,7 @@
     <div class="code">404</div>
     <h1>Страница не <em>найдена</em></h1>
     <p>Вернитесь к каталогу программ подготовки к ЕГЭ и ОГЭ по математике и физике.</p>
-    <a href="/">К программам →</a>
+    <a href="/math-and-physics-EGE-OGE/">К программам →</a>
   </div>
 </body>
 </html>

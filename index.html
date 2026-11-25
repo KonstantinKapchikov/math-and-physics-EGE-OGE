@@ -47,8 +47,13 @@
         "@type": "Person",
         "@id": "https://konstantinkapchikov.github.io/math-and-physics-EGE-OGE/#tutor",
         "name": "Капчиков Константин Алексеевич",
-        "jobTitle": "Репетитор по математике и физике (ЕГЭ и ОГЭ)",
+        "jobTitle": "Репетитор по математике и физике (ЕГЭ и ОГЭ), самозанятый (НПД)",
         "url": "https://konstantinkapchikov.github.io/math-and-physics-EGE-OGE/",
+        "image": "https://konstantinkapchikov.github.io/math-and-physics-EGE-OGE/pilot.jpg",
+        "affiliation": {
+          "@type": "EducationalOrganization",
+          "name": "Ульяновский институт гражданской авиации (УИ ГА)"
+        },
         "sameAs": [
           "https://profi.ru/profile/KapchikovKA",
           "https://t.me/Kreker_131"
@@ -636,6 +641,43 @@
       font-size: 0.99rem;
       color: var(--text-body);
       max-width: 640px;
+    }
+
+    .start-offer-strip {
+      margin-bottom: 44px;
+      padding: 22px 26px;
+      border-top: 2px solid var(--accent);
+      border-bottom: 1px solid var(--line-strong);
+      background: var(--accent-soft);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 860px) {
+      .start-offer-strip { grid-template-columns: 1fr; gap: 18px; padding: 18px 20px; margin-bottom: 32px; }
+    }
+    .offer-step-tag {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-text);
+      margin-bottom: 6px;
+    }
+    .offer-step strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .offer-step p {
+      font-size: 0.89rem;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin: 0;
     }
 
     /* ============================================================
@@ -1690,6 +1732,24 @@
         </div>
       </div>
 
+      <div class="start-offer-strip">
+        <div class="offer-step">
+          <div class="offer-step-tag">ШАГ 1 • 30 МИНУТ • 0 ₽</div>
+          <strong>Бесплатная диагностика и план</strong>
+          <p>Определяем реальный стартовый балл, находим пробелы и составляем пошаговый маршрут до экзамена без лишней воды.</p>
+        </div>
+        <div class="offer-step">
+          <div class="offer-step-tag">ОТ 50–60 Б. ДО 82–84+</div>
+          <strong>Выводим на целевой балл без зубрёжки</strong>
+          <p>Убираем хаос и ошибки на оформлении по критериям ФИПИ: нацеливаемся на 82–84+ в профиле, «5» на базе и ОГЭ.</p>
+        </div>
+        <div class="offer-step">
+          <div class="offer-step-tag">HOLST + NOTION 24/7</div>
+          <strong>Прозрачный контроль для родителей</strong>
+          <p>Конспекты всех уроков на доске Holst и живой трекер домашних заданий и пробников в Notion по прямой ссылке.</p>
+        </div>
+      </div>
+
       <div class="programs-directory" id="programsDirectory">
         <article class="program-entry" data-program="ege_prof">
           <div>
@@ -1780,7 +1840,7 @@
       <div class="faculty-spread">
         <figure class="faculty-portrait">
           <div class="portrait-frame">
-            <img src="pilot.JPG" alt="Капчиков Константин Алексеевич — преподаватель математики и физики, обучается на пилота гражданской авиации в УИ ГА" width="440" height="455" decoding="async" />
+            <img src="pilot.jpg" alt="Капчиков Константин Алексеевич — преподаватель математики и физики, обучается на пилота гражданской авиации в УИ ГА" width="440" height="455" decoding="async" />
           </div>
           <figcaption>
             <span>Капчиков К.А. • Математика и Физика</span>
@@ -2035,7 +2095,7 @@
           </div>
         </div>
         <div class="sub-calc-foot">
-          <span style="font-size:0.86rem; color:var(--text-muted);">Бесплатный перенос урока при предупреждении минимум за 4 часа</span>
+          <span style="font-size:0.86rem; color:var(--text-muted); max-width:660px; line-height:1.45;">Перенос занятия возможен при предупреждении не менее чем за 12 часов до начала при наличии свободных окон; если свободных окон нет или предупреждение дано позже, занятие оплачивается в полном объёме, а ученик получает видеозапись разбора ДЗ, теории по теме и практических заданий.</span>
           <div>
             <span style="font-size:0.88rem; color:var(--text-body); margin-right:10px;">Итого:</span>
             <span class="calc-price-out" id="calcResult">20 000&nbsp;₽</span>
@@ -2088,10 +2148,10 @@
 
         <details class="faq-row">
           <summary>
-            <span>5. Можно ли перенести урок и как быстро вы отвечаете?</span>
+            <span>5. Как устроен перенос занятия и как быстро вы отвечаете?</span>
             <span class="faq-ico">+</span>
           </summary>
-          <p>Урок бесплатно переносится на другой слот при предупреждении минимум за 4 часа до начала. Время ответа на заявку — менее 2 часов (обычно отвечаю за 15–20 минут).</p>
+          <p>Перенос занятия возможен при предупреждении не менее чем за 12 часов до начала при наличии свободных окон; если свободных окон нет или предупреждение дано позже, занятие оплачивается в полном объёме, а ученик получает видеозапись разбора ДЗ, теории по теме и практических заданий. Время ответа на заявку — менее 2 часов (обычно отвечаю за 15–20 минут).</p>
         </details>
       </div>
 
@@ -2134,9 +2194,9 @@
 
           <label class="consent-row" for="privacyConsent">
             <input type="checkbox" id="privacyConsent" checked onchange="document.getElementById('consentErr').classList.remove('show')" />
-            <span>Я ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных (152-ФЗ)</a> и даю согласие на обработку данных, направляемых мной в мессенджере.</span>
+            <span>Я ознакомлен(а) с <a href="privacy.html" target="_blank" rel="noopener noreferrer">Политикой в отношении обработки персональных данных (152-ФЗ)</a>, даю согласие на обработку данных, направляемых мной в мессенджере, и подтверждаю, что мне исполнилось 18 лет либо я действую с согласия родителя (законного представителя).</span>
           </label>
-          <div class="consent-err" id="consentErr">Пожалуйста, отметьте согласие с Политикой обработки персональных данных.</div>
+          <div class="consent-err" id="consentErr">Пожалуйста, отметьте согласие с Политикой обработки персональных данных и подтверждение возраста / согласия представителя.</div>
 
           <div class="cta-pair">
             <button type="button" class="btn-editorial btn-editorial-primary" style="justify-content:center;" onclick="sendToTelegram()">
@@ -2156,7 +2216,7 @@
   <!-- ПОДВАЛ -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div>© 2026 Капчиков Константин Алексеевич • Подготовка к ЕГЭ и ОГЭ по математике и физике</div>
+      <div>© 2026 Капчиков Константин Алексеевич • Самозанятый (НПД) • Подготовка к ЕГЭ и ОГЭ по математике и физике</div>
       <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center;">
         <a href="https://profi.ru/profile/KapchikovKA" target="_blank" rel="noopener noreferrer">Профи.ру</a>
         <a href="https://t.me/Kreker_131" target="_blank" rel="noopener noreferrer">Telegram (@Kreker_131)</a>
@@ -2938,7 +2998,7 @@
       return true;
     }
 
-    const ALLOWED_MODAL_IMAGES = new Set(['award.jpg', 'board-oge.jpg', 'pilot.JPG']);
+    const ALLOWED_MODAL_IMAGES = new Set(['award.jpg', 'board-oge.jpg', 'pilot.jpg']);
 
     function sanitizeText(val, maxLen) {
       return String(val || '')
