@@ -410,9 +410,11 @@
     .h-btn-ghost:hover { border-color: var(--text-main); background: var(--bg-alt); }
 
     @media (max-width: 680px) {
-      .nav-controls { width: 100%; justify-content: space-between; }
-      .h-btn { flex: 1; justify-content: center; padding: 8px 6px; font-size: 0.74rem; }
+      .nav-controls { width: 100%; justify-content: space-between; gap: 6px; }
+      .h-btn { flex: 1; justify-content: center; padding: 7px 6px; font-size: 0.73rem; }
+      .theme-toggle { padding: 7px 9px; }
       .theme-toggle span { display: none; }
+      .program-meta { flex-wrap: wrap; gap: 4px; }
     }
 
     /* ============================================================
@@ -1405,7 +1407,19 @@
       transition: transform 0.45s var(--ease-spring), opacity 0.3s ease, background-color 0.28s ease;
     }
     .quiz-drawer.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
-    @media (max-width: 720px) { .quiz-drawer { right: 14px; left: 14px; bottom: 14px; width: auto; max-width: none; } }
+    @media (max-width: 768px) {
+      .quiz-drawer {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        width: auto;
+        max-width: none;
+        transform: translateY(120%);
+      }
+      .quiz-drawer.open { transform: translateY(0); }
+      .quiz-fab { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 0.78rem; }
+      .quiz-meta { flex-direction: column; gap: 2px; }
+    }
 
     .quiz-head {
       background: var(--bg-bar);
@@ -3066,7 +3080,9 @@
     renderSimControls();
     renderNotionWidget();
     renderQuizCard();
-    setTimeout(() => { toggleQuizDrawer(true); }, 2400);
+    if (window.innerWidth > 768) {
+      setTimeout(() => { toggleQuizDrawer(true); }, 2400);
+    }
 
     // Прогресс прокрутки
     window.addEventListener('scroll', () => {
