@@ -1260,6 +1260,82 @@
     @media (max-width: 680px) { .form-2 { grid-template-columns: 1fr; } }
     .field { margin-bottom: 14px; }
     .field label { display: block; font-size: 0.81rem; font-weight: 600; color: var(--text-body); margin-bottom: 7px; }
+    .inline-field-label {
+      display: block;
+      font-size: 0.81rem;
+      font-weight: 600;
+      color: var(--text-body);
+      margin-bottom: 8px;
+    }
+    .subject-choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .subject-choice-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 4px;
+      padding: 10px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--line-strong);
+      border-radius: 3px;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s var(--ease-spring);
+    }
+    .subject-choice-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .subject-choice-card:hover {
+      border-color: var(--accent-text);
+      background: var(--bg-surface);
+    }
+    .subject-choice-card.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .subject-choice-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .choice-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .choice-rec-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 2px;
+      background: var(--accent);
+      color: var(--accent-text-on);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    .subject-choice-sub {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    .subject-choice-card.active .subject-choice-sub {
+      color: var(--accent-text);
+      font-weight: 600;
+    }
+
     select, input[type="text"] {
       width: 100%;
       background: var(--bg-input);
@@ -1870,15 +1946,15 @@
               <span>Физика — <strong>88 баллов</strong>, профильная математика — <strong>84 балла</strong>. Знаю экзамен изнутри и учу избегать обидных потерь на оформлении.</span>
             </div>
             <div class="f-cell">
-              <strong>Призёр ОАК ОКБ Сухого (2025)</strong>
+              <strong>Призёр олимпиады МАИ и ОКБ Сухого ПАО «ОАК» (2025)</strong>
               <span>
-                Призёр профильной инженерной олимпиады 2025 года.
-                <button type="button" class="proof-link-btn" onclick="openImageModal('award.jpg', 'Вручение сертификата призёра олимпиады ОАК ОКБ Сухого 2025 года')">Фото с награждения ↗</button>
+                Отмечен в олимпиаде по авиации от МАИ и ОКБ Сухого (ПАО «ОАК») за прикладные расчёты и инженерную логику.
+                <button type="button" class="proof-link-btn" onclick="openImageModal('award.jpg', 'Сертификат призёра • Олимпиада по авиации МАИ и ОКБ Сухого ПАО «ОАК», 2025')">Фото с награждения ↗</button>
               </span>
             </div>
             <div class="f-cell">
               <strong>УИ ГА • Обучение на пилота</strong>
-              <span>Сильная база высшей математики, физики, теоретической механики и инженерной графики.</span>
+              <span>Сильная база высшей математики, физики, дисциплины «Аэродинамика и динамика полёта», теоретической механики и инженерной графики.</span>
             </div>
             <div class="f-cell">
               <strong>Проверенный профиль</strong>
@@ -1955,8 +2031,8 @@
         </div>
         <div class="board-example-info">
           <div class="program-code" style="font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.08em; margin-bottom:10px;">ПРИМЕР С ДОСКИ HOLST • ОГЭ ФИЗИКА • 3/3 БАЛЛА</div>
-          <h3>Эталонное оформление 2-й части по критериям ФИПИ</h3>
-          <p>На уроках мы не просто ищем правильный ответ, а сразу ставим аккуратную структуру записи, за которую эксперт выставляет максимальные <strong>3 из 3 баллов</strong>:</p>
+          <h3>Эталонное оформление <span class="nowrap">2-й части</span> по критериям ФИПИ</h3>
+          <p>На уроках мы не просто ищем правильный ответ, а сразу ставим аккуратную структуру записи <span class="nowrap">2-й части</span>, за которую эксперт выставляет максимальные <strong>3 из 3 баллов</strong>:</p>
           <ul class="board-points">
             <li><strong>Дано и перевод в СИ:</strong> исключаем арифметические ошибки на размерностях.</li>
             <li><strong>Наглядный чертёж и оси:</strong> расставляем векторы сил, ускорение и проекции на оси.</li>
@@ -2086,19 +2162,50 @@
         <div style="font-family:var(--font-mono); font-size:0.71rem; color:var(--accent-text); font-weight:600; letter-spacing:0.08em; margin-bottom:16px;">РАСЧЁТ АБОНЕМЕНТА</div>
         <div class="form-2">
           <div class="field">
-            <label for="calcTariff">Направление</label>
-            <select id="calcTariff" onchange="updateCalc()">
-              <option value="1700">ОГЭ (физика / математика) или ЕГЭ Базовый — 1 700&nbsp;₽ / 60&nbsp;мин</option>
-              <option value="2500" selected>ЕГЭ Математика (Профильный уровень) — 2 500&nbsp;₽ / 90&nbsp;мин</option>
-              <option value="1200">Занятия в группе — 1 200&nbsp;₽ / 60&nbsp;мин</option>
-            </select>
+            <span class="inline-field-label">Направление</span>
+            <div class="subject-choice-grid" id="calcTariffGroup" role="radiogroup" aria-label="Направление">
+              <label class="subject-choice-card active" data-rate="2500">
+                <input type="radio" name="calcTariffRadio" value="2500" checked onchange="updateCalc()" />
+                <span class="choice-top-row">
+                  <span class="subject-choice-title">ЕГЭ Профиль</span>
+                </span>
+                <span class="subject-choice-sub">2 500 ₽ • 90 мин</span>
+              </label>
+              <label class="subject-choice-card" data-rate="1700">
+                <input type="radio" name="calcTariffRadio" value="1700" onchange="updateCalc()" />
+                <span class="choice-top-row">
+                  <span class="subject-choice-title">ОГЭ / ЕГЭ База</span>
+                </span>
+                <span class="subject-choice-sub">1 700 ₽ • 60 мин</span>
+              </label>
+              <label class="subject-choice-card" data-rate="1200">
+                <input type="radio" name="calcTariffRadio" value="1200" onchange="updateCalc()" />
+                <span class="choice-top-row">
+                  <span class="subject-choice-title">В группе / паре</span>
+                </span>
+                <span class="subject-choice-sub">1 200 ₽ • 60 мин</span>
+              </label>
+            </div>
           </div>
           <div class="field">
-            <label for="calcPack">Пакет занятий</label>
-            <select id="calcPack" onchange="updateCalc()">
-              <option value="4">4 занятия (2 недели при графике 2 раза/нед)</option>
-              <option value="8" selected>8 занятий (1 месяц при графике 2 раза/нед)</option>
-            </select>
+            <span class="inline-field-label">Пакет занятий</span>
+            <div class="subject-choice-grid" id="calcPackGroup" role="radiogroup" aria-label="Пакет занятий">
+              <label class="subject-choice-card" data-pack="4">
+                <input type="radio" name="calcPackRadio" value="4" onchange="updateCalc()" />
+                <span class="choice-top-row">
+                  <span class="subject-choice-title">4 занятия</span>
+                </span>
+                <span class="subject-choice-sub">1 месяц • 1 р./нед.</span>
+              </label>
+              <label class="subject-choice-card active" data-pack="8">
+                <input type="radio" name="calcPackRadio" value="8" checked onchange="updateCalc()" />
+                <span class="choice-top-row">
+                  <span class="subject-choice-title">8 занятий</span>
+                  <span class="choice-rec-badge">Рекомендую</span>
+                </span>
+                <span class="subject-choice-sub">1 месяц • 2 р./нед.</span>
+              </label>
+            </div>
           </div>
         </div>
         <div class="sub-calc-foot">
@@ -2175,13 +2282,29 @@
         <div class="booking-open">
           <div class="form-2">
             <div class="field">
-              <label for="leadSubject">Направление подготовки</label>
-              <select id="leadSubject">
-                <option value="ЕГЭ Математика (Профильный уровень)">ЕГЭ Математика (Профильный уровень)</option>
-                <option value="ЕГЭ Базовый уровень">ЕГЭ Базовый уровень</option>
-                <option value="ОГЭ Математика">ОГЭ Математика (9 класс)</option>
-                <option value="ОГЭ Физика">ОГЭ Физика (9 класс)</option>
-              </select>
+              <span class="inline-field-label">Направление подготовки</span>
+              <div class="subject-choice-grid" id="leadSubjectGroup" role="radiogroup" aria-label="Направление подготовки">
+                <label class="subject-choice-card active" data-value="ЕГЭ Математика (Профильный уровень)">
+                  <input type="radio" name="leadSubjectRadio" value="ЕГЭ Математика (Профильный уровень)" checked onchange="syncSubjectChoice()" />
+                  <span class="subject-choice-title">ЕГЭ Профиль</span>
+                  <span class="subject-choice-sub">Математика • 82–84+ б.</span>
+                </label>
+                <label class="subject-choice-card" data-value="ЕГЭ Базовый уровень">
+                  <input type="radio" name="leadSubjectRadio" value="ЕГЭ Базовый уровень" onchange="syncSubjectChoice()" />
+                  <span class="subject-choice-title">ЕГЭ База</span>
+                  <span class="subject-choice-sub">Математика • «5»</span>
+                </label>
+                <label class="subject-choice-card" data-value="ОГЭ Математика">
+                  <input type="radio" name="leadSubjectRadio" value="ОГЭ Математика" onchange="syncSubjectChoice()" />
+                  <span class="subject-choice-title">ОГЭ Математика</span>
+                  <span class="subject-choice-sub">9 класс • «5» и профиль</span>
+                </label>
+                <label class="subject-choice-card" data-value="ОГЭ Физика">
+                  <input type="radio" name="leadSubjectRadio" value="ОГЭ Физика" onchange="syncSubjectChoice()" />
+                  <span class="subject-choice-title">ОГЭ Физика</span>
+                  <span class="subject-choice-sub">9 класс • «5» и 2-я часть</span>
+                </label>
+              </div>
             </div>
             <div class="field">
               <label for="leadGoal">Класс и желаемый результат</label>
@@ -2979,8 +3102,18 @@
     }
 
     function updateCalc() {
-      const rate = Number(document.getElementById('calcTariff').value);
-      const count = Number(document.getElementById('calcPack').value);
+      const checkedTariff = document.querySelector('input[name="calcTariffRadio"]:checked');
+      const checkedPack = document.querySelector('input[name="calcPackRadio"]:checked');
+      const rate = Number(checkedTariff ? checkedTariff.value : 2500);
+      const count = Number(checkedPack ? checkedPack.value : 8);
+
+      document.querySelectorAll('#calcTariffGroup .subject-choice-card').forEach(card => {
+        card.classList.toggle('active', Number(card.getAttribute('data-rate')) === rate);
+      });
+      document.querySelectorAll('#calcPackGroup .subject-choice-card').forEach(card => {
+        card.classList.toggle('active', Number(card.getAttribute('data-pack')) === count);
+      });
+
       const el = document.getElementById('calcResult');
       el.textContent = (rate * count).toLocaleString('ru-RU') + ' ₽';
       el.classList.remove('bump');
@@ -3030,8 +3163,17 @@
       openModal('imageModal');
     }
 
+    function syncSubjectChoice() {
+      const checkedRadio = document.querySelector('input[name="leadSubjectRadio"]:checked');
+      const val = checkedRadio ? checkedRadio.value : '';
+      document.querySelectorAll('#leadSubjectGroup .subject-choice-card').forEach(card => {
+        card.classList.toggle('active', card.getAttribute('data-value') === val);
+      });
+    }
+
     function buildMessage() {
-      const subject = sanitizeText(document.getElementById('leadSubject').value, 80);
+      const checkedRadio = document.querySelector('input[name="leadSubjectRadio"]:checked');
+      const subject = sanitizeText(checkedRadio ? checkedRadio.value : 'ЕГЭ Математика (Профильный уровень)', 80);
       const goal = sanitizeText(document.getElementById('leadGoal').value, 120) || 'не указано';
       const time = sanitizeText(document.getElementById('leadTime').value, 120) || 'по договорённости';
       return `Здравствуйте, Константин! Хочу записаться на бесплатную диагностику.\n• Направление: ${subject}\n• Класс / цель: ${goal}\n• Удобное время: ${time}`;
