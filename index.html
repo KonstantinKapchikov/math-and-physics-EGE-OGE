@@ -1109,31 +1109,76 @@
     .st-work { background: var(--accent-soft); color: var(--accent-text); }
     .st-next { background: var(--amber-bg); color: var(--amber); }
 
-    .mocks-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; }
+    .mocks-split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; align-items: stretch; }
     @media (max-width: 840px) { .mocks-split { grid-template-columns: 1fr; } }
     .chart-box {
-      background: var(--chart-bg);
+      background: linear-gradient(180deg, var(--chart-bg) 0%, #171a22 100%);
       color: var(--chart-text);
-      padding: 22px;
+      padding: 22px 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 14px;
     }
     .bars-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      gap: 14px;
       align-items: end;
-      height: 160px;
-      margin: 16px 0 8px;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.16);
+      height: 176px;
+      padding: 18px 8px 0;
+      margin: 4px 0 2px;
+      background-image: repeating-linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.11) 0px,
+        rgba(255, 255, 255, 0.11) 1px,
+        transparent 1px,
+        transparent 44px
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     }
-    .bar-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
-    .bar-val { font-family: var(--font-mono); font-size: 0.71rem; margin-bottom: 6px; text-align: center; }
-    .bar-fill { width: 100%; max-width: 42px; background: var(--chart-bar); }
-    .bar-col.target .bar-fill { background: var(--chart-accent); }
+    .bar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: auto;
+      align-self: stretch;
+    }
+    .bar-val {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: #d4d7df;
+      margin-bottom: 7px;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .bar-fill {
+      width: 100%;
+      max-width: 44px;
+      flex: 0 0 auto;
+      border-radius: 3px 3px 0 0;
+      background: linear-gradient(180deg, #676e7d 0%, var(--chart-bar) 100%);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
+      transition: height 0.45s var(--ease-spring), filter 0.2s ease;
+    }
+    .bar-col:hover .bar-fill { filter: brightness(1.12); }
+    .bar-col.target .bar-fill {
+      background: linear-gradient(180deg, #b8324c 0%, var(--chart-accent) 100%);
+      box-shadow: 0 6px 18px rgba(150, 35, 59, 0.45);
+    }
     .bar-col.target .bar-val { color: #ffffff; font-weight: 600; }
-    .bar-lbl { font-size: 0.71rem; color: #8c919e; margin-top: 8px; text-align: center; }
+    .bar-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      color: #9ba0ae;
+      margin-top: 9px;
+      text-align: center;
+      line-height: 1.25;
+    }
+    .bar-col.target .bar-lbl { color: #f4f4f6; font-weight: 600; }
 
     .mock-row {
       padding: 12px 0;
@@ -3067,7 +3112,7 @@
       } else if (currentNotionView === 'mocks') {
         const bars = data.mocks.bars.map(b => `<div class="bar-col ${b.target ? 'target' : ''}">
           <div class="bar-val">${b.val}</div>
-          <div class="bar-fill" style="height:${b.h}%;"></div>
+          <div class="bar-fill" style="height:${Math.round(b.h * 1.15)}px;"></div>
           <div class="bar-lbl">${b.label}</div>
         </div>`).join('');
         const details = data.mocks.details.map(d => `<div class="mock-row">
